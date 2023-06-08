@@ -1,9 +1,9 @@
-from typing import Optional
 from datetime import datetime
+from typing import Optional
 
 from pydantic import BaseModel, PositiveInt, Field, Extra
 
-from app.services.constains import EXAMPLE_AMOUNT
+from app.core.config import EXAMPLE_AMOUNT
 
 
 class DonationBase(BaseModel):

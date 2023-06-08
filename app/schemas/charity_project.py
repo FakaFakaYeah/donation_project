@@ -3,7 +3,7 @@ from typing import Optional
 
 from pydantic import BaseModel, PositiveInt, Field, Extra, validator
 
-from app.services.constains import (
+from app.core.config import (
     MIN_LENGTH, MAX_LENGTH, EXAMPLE_AMOUNT, REG_NAME
 )
 

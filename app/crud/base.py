@@ -1,9 +1,10 @@
-from typing import Optional
+from typing import Optional, Union, List
 
+from sqlalchemy import select, update, false
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, update
 
-from app.models import User
+from app.models import User, CharityProject, Donation
+from app.schemas import DonationDB
 
 
 class CRUDBase:
@@ -63,3 +64,24 @@ class CRUDBase:
         await session.delete(obj)
         await session.commit()
         return obj
+
+    async def get_all_open(
+            self,
+            session: AsyncSession
+    ) -> List[Union[Donation, CharityProject]]:
+        objs = await session.scalars(
+            select(self.__model).where(
+                self.__model.fully_invested == false()
+            ).order_by(self.__model.create_date)
+        )
+        return objs.all()
+
+    @staticmethod
+    async def get_user_donations(
+            user: User,
+            session: AsyncSession
+    ) -> List[DonationDB]:
+        donations = await session.scalars(
+            select(Donation).where(Donation.user_id == user.id)
+        )
+        return donations.all()
