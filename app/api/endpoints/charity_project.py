@@ -7,13 +7,14 @@ from app.api.validators import (
     check_duplicate, check_project_exists, check_project_for_update,
     check_project_for_delete
 )
-from app.core import current_superuser, get_async_session
-from app.crud import charity_project_crud
-from app.models import Donation
-from app.schemas import (
+from app.core.user import current_superuser
+from app.core.db import get_async_session
+from app.crud.charity_project import charity_project_crud
+from app.models.donation import Donation
+from app.schemas.charity_project import (
     CharityProjectDB, CharityProjectCreate, CharityProjectUpdate
 )
-from app.services import investing
+from app.services.investing import investing
 
 router = APIRouter()
 
