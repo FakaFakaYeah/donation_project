@@ -1,5 +1,3 @@
-from .user import UserRead, UserCreate, UserUpdate
-from .charity_project import (
-    CharityProjectCreate, CharityProjectUpdate, CharityProjectDB,
-)
-from .donation import DonationCreate, DonationDB, DonationUser
+from .user import UserRead, UserCreate, UserUpdate # noqa
+from .charity_project import CharityProjectCreate, CharityProjectUpdate, CharityProjectDB # noqa
+from .donation import DonationCreate, DonationDB, DonationUser # noqa

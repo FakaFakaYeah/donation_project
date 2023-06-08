@@ -1,1 +1,1 @@
-from .investing import investing
+from .investing import investing # noqa
