@@ -3,12 +3,12 @@ from typing import List
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.user import current_user, current_superuser, get_async_session
-from app.crud.donation import donation_crud
-from app.models.user import User
-from app.models.charity_project import CharityProject
-from app.schemas.donation import DonationDB, DonationCreate, DonationUser
-from app.services.investing import investing
+from app.schemas import DonationDB, DonationCreate, DonationUser
+from app.core import current_user, current_superuser, get_async_session
+from app.crud import donation_crud
+from app.models import User, CharityProject
+from app.services import investing
+
 
 router = APIRouter()
 

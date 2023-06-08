@@ -3,9 +3,8 @@ from typing import List
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.user import User
-from app.models.donation import Donation
-from app.schemas.donation import DonationDB
+from app.models import User, Donation
+from app.schemas import DonationDB
 from .base import CRUDBase
 
 

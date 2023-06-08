@@ -4,8 +4,7 @@ from typing import Union, List
 from sqlalchemy import select, false
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.charity_project import CharityProject
-from app.models.donation import Donation
+from app.models import Donation, CharityProject
 
 
 async def close_obj(
