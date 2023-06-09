@@ -66,7 +66,7 @@ async def get_user_donations(
     session: AsyncSession = Depends(get_async_session),
 ) -> List[DonationUser]:
 
-    donations = await donation_crud.get_user_donations(
+    donations = await donation_crud.get_by_user_id(
         user=user, session=session
     )
     return donations

@@ -76,12 +76,12 @@ class CRUDBase:
         )
         return objs.all()
 
-    @staticmethod
-    async def get_user_donations(
+    async def get_by_user_id(
+            self,
             user: User,
             session: AsyncSession
     ) -> List[DonationDB]:
         donations = await session.scalars(
-            select(Donation).where(Donation.user_id == user.id)
+            select(self.__model).where(self.__model.user_id == user.id)
         )
         return donations.all()
