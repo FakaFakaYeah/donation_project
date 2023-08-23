@@ -3,9 +3,12 @@
 >Проект, позволяющий собирать пожертвования на различные целевые проекты.
 
 ### Используемые технологии:
-* Python 3.7
-* Fast Api 0.78.0
-* SQLAlchemy 1.4
+[![Python][Python-badge]][Python-url]
+[![Django][Django-badge]][Django-url]
+[![DRF][DRF-badge]][DRF-url]
+[![Python-telegram-bot][Python-telegram-bot-badge]][Python-telegram-bot-url]
+[![Postgres][Postgres-badge]][Postgres-url]
+[![Nginx][Nginx-badge]][Nginx-url]
 
 ### Как запустить проект:
 
