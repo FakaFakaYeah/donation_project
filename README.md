@@ -1,5 +1,5 @@
 # Проект сервис Donations. 
-
+ 
 ### Оглавление
 <ol>
  <li><a href="#description">Описание проекта</a></li>
